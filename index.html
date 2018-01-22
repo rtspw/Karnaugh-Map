@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Karnaugh Maps</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <div id="menu-container">
+            <div id="menu">
+                <div id="title-button">Karnaugh Maps</div>
+                <div id="options">
+                    <a id="three-variable" href="index.html">Three Variables</a>
+                    <a id="four-variable" href="index.html">Four Variables</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="main-container">
+            <div class="column">
+                <div id="table-container">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th colspan="2">A</th>
+                        </tr>
+                        <tr>
+                            <td class="topbar"></td>
+                            <td class="topbar">0</td>
+                            <td class="topbar">1</td>
+                        </tr>
+                        <tr>
+                            <td class="leftbar">00</td>
+                            <td id="m0" class="map-button">0</td>
+                            <td id="m4" class="map-button">0</td>
+                        </tr>
+                        <tr>
+                            <td class="leftbar"> <span id="bc">BC</span> 01</td>
+                            <td id="m1" class="map-button">0</td>
+                            <td id="m5" class="map-button">0</td>
+                        </tr>
+                        <tr>
+                            <td class="leftbar">11</td>
+                            <td id="m3" class="map-button">0</td>
+                            <td id="m7" class="map-button">0</td>
+                        </tr>
+                        <tr>
+                            <td class="leftbar">10</td>
+                            <td id="m2" class="map-button">0</td>
+                            <td id="m6" class="map-button">0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+                
+            <div class="column">
+                <div id="formula">
+                    f = <span id="final-formula">0
+                        
+                    </span> 
+                </div>
+            </div>
+        </div>
+
+        <div id="formula-container">
+
+        </div>
+            
+    </body>
+
+    <script src="assets/js/3var.js"></script>
+</html>

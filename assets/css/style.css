@@ -1,0 +1,142 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    /* background-color: #CEE7E6; */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#menu-container {
+    color: white;
+    background-color: #7DC95E;
+    padding: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #648767;
+
+    display: flex;
+    justify-content: center;                
+}
+#menu {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+#options {
+    display: flex;
+    justify-content: flex-end;
+}
+#title-button {
+    padding: 20px;
+    font-weight: 700;
+}
+#three-variable {
+    margin: 0 5px;
+    font-size: 18px;
+    padding: 20px;
+    padding-top: 25px;
+    transition: background-color 0.1s linear, color 0.1s linear;
+    cursor: pointer;
+}
+#three-variable:hover {
+    background-color: white;
+    color: #7DC95E;
+}
+#four-variable {
+    margin: 0 5px;
+    font-size: 18px;
+    padding: 20px;
+    padding-top: 25px;
+    transition: background-color 0.1s linear, color 0.1s linear;
+    cursor: pointer;
+}
+#four-variable:hover {
+    background-color: white;
+    color: #7DC95E;
+}
+
+#main-container {
+
+    padding: 50px 15%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-end;
+    flex-direction: column;
+
+}
+.column {
+    width: 25%; 
+    flex: 1 1 auto;
+    margin: 10px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#formula-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7DC95E;
+    border-top: 2px solid #648767;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+#formula {
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#bc {
+    margin-right: 20px;
+}
+table {
+    width: 100%;
+    position: relative;
+    right: 45px;
+}
+td {
+    padding: 10px 50px;
+    text-align: center;
+    border: 2px solid #648767;
+    border-radius: 5%;
+}
+.leftbar {
+    padding: 10px 10px;
+    font-weight: bold;
+    text-align: right;
+    border: none;
+}
+.topbar {
+    font-weight: bold;
+    border: none;
+    padding-bottom: 5px;
+}
+.map-button {
+    transition: background-color 0.1s linear, color 0.1s linear;
+    cursor: pointer;
+    user-select: none;
+}
+.map-button:hover {
+    background-color: rgb(241, 255, 255);
+}
+.selected-button {
+    background-color: #64876760;
+}
