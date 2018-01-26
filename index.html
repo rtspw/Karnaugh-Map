@@ -1,3 +1,5 @@
+<!-- Written by Richard Tang for CS 006 -->
+<!-- January 2018 -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,61 +17,112 @@
                     <a id="three-variable" href="index.html">Three Variables</a>
                     <a id="four-variable" href="index.html">Four Variables</a>
                 </div>
-
             </div>
         </div>
 
         <div id="main-container">
             <div class="column">
                 <div id="table-container">
-                    <table>
+                    <table id="kmap">
                         <tr>
-                            <th></th>
-                            <th colspan="2">A</th>
+                        <th></th>
+                        <th colspan="2">A</th>
                         </tr>
                         <tr>
-                            <td class="topbar"></td>
-                            <td class="topbar">0</td>
-                            <td class="topbar">1</td>
+                        <td class="topbar"></td>
+                        <td class="topbar">0</td>
+                        <td class="topbar">1</td>
                         </tr>
                         <tr>
-                            <td class="leftbar">00</td>
-                            <td id="m0" class="map-button">0</td>
-                            <td id="m4" class="map-button">0</td>
+                        <td class="leftbar">00</td>
+                        <td id="m0" class="map-button" title="m0">0</td>
+                        <td id="m4" class="map-button" title="m4">0</td>
                         </tr>
                         <tr>
-                            <td class="leftbar"> <span id="bc">BC</span> 01</td>
-                            <td id="m1" class="map-button">0</td>
-                            <td id="m5" class="map-button">0</td>
+                        <td class="leftbar"> <span id="bc">BC</span> 01</td>
+                        <td id="m1" class="map-button" title="m1">0</td>
+                        <td id="m5" class="map-button" title="m5">0</td>
                         </tr>
                         <tr>
-                            <td class="leftbar">11</td>
-                            <td id="m3" class="map-button">0</td>
-                            <td id="m7" class="map-button">0</td>
+                        <td class="leftbar">11</td>
+                        <td id="m3" class="map-button" title="m3">0</td>
+                        <td id="m7" class="map-button" title="m7">0</td>
                         </tr>
                         <tr>
-                            <td class="leftbar">10</td>
-                            <td id="m2" class="map-button">0</td>
-                            <td id="m6" class="map-button">0</td>
+                        <td class="leftbar">10</td>
+                        <td id="m2" class="map-button" title="m2">0</td>
+                        <td id="m6" class="map-button" title="m6">0</td>
                         </tr>
                     </table>
                 </div>
             </div>
                 
             <div class="column">
-                <div id="formula">
-                    f = <span id="final-formula">0
-                        
-                    </span> 
+                <div id="table-container">
+                    <table id="truth-table">
+                        <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>F</th>
+                        </tr>
+                        <tr>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m0" class="map-button" title="m0">0</td>
+                        </tr>
+                        <tr>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m1" class="map-button" title="m1">0</td>
+                        </tr>
+                        <tr>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m2" class="map-button" title="m2">0</td>
+                        </tr>
+                        <tr>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m3" class="map-button" title="m3">0</td>
+                        </tr>
+                        <tr>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m4" class="map-button" title="m4">0</td>
+                        </tr>
+                        <tr>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m5" class="map-button" title="m5">0</td>
+                        </tr>
+                        <tr>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m6" class="map-button" title="m6">0</td>
+                        </tr>
+                        <tr>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m7" class="map-button" title="m7">0</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-
         <div id="formula-container">
-
+            <input type="text" autocomplete="off" onkeyup="validateInput(this);" id="minterm-input" value="" placeholder="Enter minterms space-separated">
         </div>
-            
     </body>
 
-    <script src="assets/js/3var.js"></script>
+    <script src="assets/js/3variable.js"></script>
+    <script src="assets/js/validateInput.js"></script>
 </html>

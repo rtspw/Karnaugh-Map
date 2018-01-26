@@ -25,88 +25,121 @@ const NUM_Of_VARIABLES = 3;
 /**
  * Everytime a button is pressed, makes and updates the formula
  */
-function buildString() {
-    var finalStr = "0";
-    var difference = false;
-    var indexOfDiff;
-    var mintermsTemp = minterms.slice();
+// function buildString() {
+//     var finalStr = "0";
+//     var difference = false;
+//     var hasMatch = false;
+//     var hasX = false;
+//     var indexOfDiff;
+//     var mintermsTemp = minterms.slice();
+//     var essPrimes = [];
 
-    for(var numOfVar = 0; numOfVar < NUM_Of_VARIABLES; numOfVar++) { console.log("LOOP " + numOfVar);
+//     for(var numOfVar = 0; numOfVar < NUM_Of_VARIABLES - 1; numOfVar++) { console.log("|||||||| LOOP " + numOfVar);
 
-        // Cycle through minterms array
-        for(var i=0; i < mintermsTemp.length; i++) {
+//         // Cycle through minterms array
+//         for(var i=0; i < mintermsTemp.length; i++) {
 
-            // Cycle through array to compare with first cycle
-            for(var j=0; j < mintermsTemp.length; j++) {
+//             hasX = false;
+//             hasMatch = false;
 
-                // Compares elements to check for single letter differences
-                if(i !== j && mintermsTemp[i].length === mintermsTemp[j].length) {
+//             // Marks if item has an x so it is not included in ess prime list
+//             if(mintermsTemp[i].includes("x")) {
+//                 hasX = true;
+//             }
 
-                    console.log("Starting check - - -");
+//             // Cycle through array to compare with first cycle
+//             for(var j=0; j < mintermsTemp.length; j++) {
 
-                    difference = false;
+                
+//                 // Compares elements to check for single letter differences
+//                 if(i !== j) {
 
-                    // Compares letters in the string
-                    for(var k=0; k < mintermsTemp[i].length; k++) {
+//                     console.log("||| Comparing " + mintermsTemp[i] +" and "+mintermsTemp[j]);
 
-                        // Marks index of difference if exists
-                        if(mintermsTemp[i].charAt(k) != mintermsTemp[j].charAt(k)) {
-                            console.log("There is one difference - - -> | " + mintermsTemp[i].charAt(k) + " " + mintermsTemp[j].charAt(k)) + " |";
 
-                            // Breaks out of loop is more than one difference exists
-                            if(difference) {
-                                console.log("Too many differences!!!");
-                                difference = false;
-                                break;
-                            }
-                            else {
-                                difference = true;
-                                indexOfDiff = k;
-                            }
-                        }
-                    }
+//                     difference = false;
 
-                    // If there is a difference, replace different characters with just placeholder 'x'
-                    console.log("index = " + indexOfDiff);
-                    if(difference) {
-                        var tempStr = mintermsTemp[i];
-                        tempStr = tempStr.substr(0, indexOfDiff) + "x" + tempStr.substr(indexOfDiff + 1);
-                        console.log("New String - - - " + tempStr);
-                        mintermsSimp.push(tempStr);
-                    }
+//                     // Compares letters in the string
+//                     for(var k=0; k < mintermsTemp[i].length; k++) {
 
-                    console.log("finished compaing");
-                }
-            }
+//                         // If 'x's exist, make sure they are in the same location or skip.
+//                         if(mintermsTemp[i].charAt(k) === "x" && mintermsTemp[j].charAt(k) !== "x") {
+//                             console.log("ASDFASDFASDFASDFASDF"); // DEBUG
+//                             break;
+//                         }
 
-        }
+//                         // Marks index of difference if exists
+//                         if(mintermsTemp[i].charAt(k) !== mintermsTemp[j].charAt(k) && mintermsTemp[i].charAt(k) !== "x" && mintermsTemp[j].charAt(k) !== "x") {
+//                             console.log("There is a difference - - -> | " + mintermsTemp[i].charAt(k) + " " + mintermsTemp[j].charAt(k)) + " |"; // DEBUG
 
-        // Removes duplicates from minterm array
-        mintermsSimp = mintermsSimp.filter(function(value,index,array) {
-            return array.indexOf(value) == index;
-        });
+//                             // Breaks out of loop is more than one difference exists
+//                             if(difference) {
+//                                 console.log("Too many differences! Skipping..."); // DEBUG
+//                                 difference = false;
+//                                 break;
+//                             }
+//                             else {
+//                                 difference = true;
+//                                 indexOfDiff = k;
+//                             }
+//                         }
+                        
+//                     }
+
+//                     // If there is a difference, replace different characters with just placeholder 'x'
+//                     if(difference) {
+//                         var tempStr = mintermsTemp[i];
+//                         tempStr = tempStr.substr(0, indexOfDiff) + "x" + tempStr.substr(indexOfDiff + 1);
+//                         mintermsSimp.push(tempStr);
+
+//                         console.log("Pushing " + tempStr + " to mintermsSimp");
+
+//                         // Set to true so we know it is not an essential prime
+//                         hasMatch = true;
+//                     }
+//                 }
+
+//             }
+//             // If a minterm does not have a pair, mark as an essential prime
+//             if(!hasMatch && !hasX) {
+//                 console.log("no match :(");
+//                 essPrimes.push(mintermsTemp[i]);
+//             }
+//             if(!hasMatch && hasX) {
+//                 mintermsSimp.push(mintermsTemp[i]);
+//             }
+
+//         }
+
+//         // Removes duplicates from minterm array
+//         mintermsSimp = mintermsSimp.filter(function(value,index,array) {
+//             return array.indexOf(value) == index;
+//         });
         
-        // Debug  -  -  -
-        console.log("Current Array - - -");
-        for(var i=0; i < mintermsTemp.length; i++) {
-            console.log(mintermsTemp[i]);
-        }
-        console.log("New Array - - -");
-        for(var i=0; i < mintermsSimp.length; i++) {
-            console.log(mintermsSimp[i]);
-        }
-        //  -  -  -  -  -
+//         console.log("Ess Primes - - -");
+//         for(var i=0; i < essPrimes.length; i++) {
+//             console.log(essPrimes[i]);
+//         }
 
-        mintermsTemp = mintermsSimp.slice();
-        mintermsSimp = [];
-    }
+//         mintermsTemp = mintermsSimp.slice();
+//         mintermsSimp = [];
 
-    if(m0b && m1b && m2b && m3b && m4b && m5b && m6b && m7b) {
-        finalStr = "1";
-    }
+//         // Debug  -  -  -
+//         console.log("Current Array - - -");
+//         for(var i=0; i < mintermsTemp.length; i++) {
+//             console.log(mintermsTemp[i]);
+//         }
+//         //  -  -  -  -  -
+//     }
 
-    formula.textContent = finalStr;
-}
+//     // Add essential primes to final list
+
+//     if(m0b && m1b && m2b && m3b && m4b && m5b && m6b && m7b) {
+//         finalStr = "1";
+//     }
+
+//     formula.textContent = finalStr;
+// }
 
 /** 
  * Finds an element in an array and removes it
