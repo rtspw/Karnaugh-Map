@@ -1,11 +1,9 @@
 // Maximum number of minterms
-const NUM_OF_MINTERMS = 8;
+const NUM_OF_MINTERMS = 16;
 
 // The input by the user specifying which minterms to use
 let inputVal;
 var inputField = document.querySelector("#minterm-input");
-
-
 
 // Contains all the buttons 
 let mbuttons = [];
@@ -89,18 +87,24 @@ function cleanInput(input) {
         input = input.replace(/[^0-9\ ]/g,'');
 
         // Put into array with space delimiter
-        var arr = input.split(" ");
+        let arr = input.split(" ");
+
+        // Removes out of bound minterms
+        for(let i=arr.length; i >= 0; i--) {
+            if(arr[i] >= NUM_OF_MINTERMS)
+                arr.splice(i, 1);
+        }
 
         // Remove whitespace characters (if exists)
         arr = arr.filter(function(entry) { 
             return /\S/.test(entry); 
         });
 
-        // Removes out of bound minterms
-        for(let i=arr.length; i >= 0; i--) {
-            if(arr[i] >= NUM_OF_MINTERMS) 
-                arr.splice(i, 1);
-        }
+        // Removes duplicate terms
+        arr = arr.filter(function(item, pos) {
+            return arr.indexOf(item) == pos;
+        });
+
         return arr;
     }
 }
