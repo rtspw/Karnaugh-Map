@@ -52,7 +52,7 @@ input {
     text-align: center;
 }
 
-#three-variable, #four-variable {
+#three-variable, #four-variable, #five-variable {
     text-align: center;
     margin: 0 5px;
     font-size: 18px;
@@ -61,7 +61,7 @@ input {
     transition: background-color 0.1s linear, color 0.1s linear;
     cursor: pointer;
 }
-#three-variable:hover, #four-variable:hover {
+#three-variable:hover, #four-variable:hover, #five-variable:hover {
     background-color: white;
     color: #7DC95E;
 }
@@ -183,6 +183,10 @@ input {
     background-color: #64876760;
 }
 
+.dont-care-button {
+    font-size: 14px;
+    background-color: #c2654960;
+}
 /* - - - - - - - - - - - - - - - - - - - */
 
 @media screen and (max-width:900px) {
