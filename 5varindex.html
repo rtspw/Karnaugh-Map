@@ -1,0 +1,360 @@
+<!-- Written by Richard Tang for CS 006 -->
+<!-- January 2018 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Karnaugh Maps 5 Variables</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/style-5var.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#ffffff">
+
+    </head>
+    <body>
+        <div id="menu-container">
+            <div id="menu">
+                <div id="title-button">Karnaugh Maps</div>
+                <div id="options">
+                    <a id="three-variable" href="index.html">Three Variables</a>
+                    <a id="four-variable" href="4varindex.html">Four Variables</a>
+                    <a id="five-variable" href="5varindex.html">Five Variables</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="main-container">
+            <div class="column">
+                <div id="table-container">
+                    <table id="kmap">
+                        <tr>
+                        <th></th>
+                        <th colspan="2">AB</th>
+                        </tr>
+                        <tr>
+                        <td class="topbar"></td>
+                        <td class="topbar">00</td>
+                        <td class="topbar">01</td>
+                        <td class="topbar">11</td>
+                        <td class="topbar">10</td>
+                        </tr>
+                        <tr>
+                        <td class="leftbar">000</td>
+                        <td id="m0" class="map-button" title="m0">0</td>
+                        <td id="m8" class="map-button" title="m8">0</td>
+                        <td id="m24" class="map-button" title="m24">0</td>
+                        <td id="m16" class="map-button" title="m16">0</td>
+                        </tr>
+                        <tr>
+                        <td class="leftbar"><span id="cde">CDE</span>001</td>
+                        <td id="m1" class="map-button" title="m1">0</td>
+                        <td id="m9" class="map-button" title="m9">0</td>
+                        <td id="m25" class="map-button" title="m25">0</td>
+                        <td id="m17" class="map-button" title="m17">0</td>
+                        </tr>
+                        <tr>
+                        <td class="leftbar">011</td>
+                        <td id="m3" class="map-button" title="m3">0</td>
+                        <td id="m11" class="map-button" title="m11">0</td>
+                        <td id="m27" class="map-button" title="m27">0</td>
+                        <td id="m19" class="map-button" title="m19">0</td>
+                        </tr>
+                        <tr>
+                        <td class="leftbar">010</td>
+                        <td id="m2" class="map-button" title="m2">0</td>
+                        <td id="m10" class="map-button" title="m10">0</td>
+                        <td id="m26" class="map-button" title="m26">0</td>
+                        <td id="m18" class="map-button" title="m18">0</td>
+                        </tr>
+                        <!-- Mirror Line -->
+                        <tr>
+                            <td colspan="5" id="mirror-line"></td>
+                        </tr>
+                        <!-- - - - - - - -->
+                        <tr>
+                        <td class="leftbar">110</td>
+                        <td id="m6" class="map-button" title="m6">0</td>
+                        <td id="m14" class="map-button" title="m14">0</td>
+                        <td id="m30" class="map-button" title="m30">0</td>
+                        <td id="m22" class="map-button" title="m22">0</td>
+                        </tr>
+                        <tr>
+                        <td class="leftbar">111</td>
+                        <td id="m7" class="map-button" title="m7">0</td>
+                        <td id="m15" class="map-button" title="m15">0</td>
+                        <td id="m31" class="map-button" title="m31">0</td>
+                        <td id="m23" class="map-button" title="m23">0</td>
+                        </tr>
+                        <tr>
+                        <td class="leftbar">101</td>
+                        <td id="m5" class="map-button" title="m5">0</td>
+                        <td id="m13" class="map-button" title="m13">0</td>
+                        <td id="m29" class="map-button" title="m29">0</td>
+                        <td id="m21" class="map-button" title="m21">0</td>
+                        </tr>
+                        <tr>
+                        <td class="leftbar">100</td>
+                        <td id="m4" class="map-button" title="m4">0</td>
+                        <td id="m12" class="map-button" title="m12">0</td>
+                        <td id="m28" class="map-button" title="m28">0</td>
+                        <td id="m20" class="map-button" title="m20">0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+                
+            <div class="column">
+                <div id="table-container">
+                    <table id="truth-table">
+                        <tr>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th class="interpadding"></th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th class="interpadding"></th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th class="interpadding"></th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        </tr>
+                        <tr>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m0" class="map-button" title="m0">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m8" class="map-button" title="m8">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m16" class="map-button" title="m16">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m24" class="map-button" title="m24">0</td>
+                        </tr>
+                        <tr>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m1" class="map-button" title="m1">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m9" class="map-button" title="m9">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m17" class="map-button" title="m17">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m25" class="map-button" title="m25">0</td>
+                        </tr>
+                        <tr>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m2" class="map-button" title="m2">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m10" class="map-button" title="m10">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m18" class="map-button" title="m18">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m26" class="map-button" title="m26">0</td>
+                        </tr>
+                        <tr>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m3" class="map-button" title="m3">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m11" class="map-button" title="m11">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m19" class="map-button" title="m19">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m27" class="map-button" title="m27">0</td>
+                        </tr>
+                        <tr>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m4" class="map-button" title="m4">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m12" class="map-button" title="m12">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m20" class="map-button" title="m20">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m28" class="map-button" title="m28">0</td>
+                        </tr>
+                        <tr>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m5" class="map-button" title="m5">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m13" class="map-button" title="m13">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m21" class="map-button" title="m21">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m29" class="map-button" title="m29">0</td>
+                        </tr>
+                        <tr>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m6" class="map-button" title="m6">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m14" class="map-button" title="m14">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m22" class="map-button" title="m22">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td id="tt-m30" class="map-button" title="m30">0</td>
+                        </tr>
+                        <tr>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m7" class="map-button" title="m7">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m15" class="map-button" title="m15">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="zero-shaded">0</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m23" class="map-button" title="m23">0</td>
+                        <td class="interpadding"></td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td class="one-shaded">1</td>
+                        <td id="tt-m31" class="map-button" title="m31">0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="formula-container">
+            <input type="text" autocomplete="off" onkeyup="validateInput(this);" id="minterm-input" value="" placeholder="Enter minterms space-separated (1 4 d3...)">
+        </div>
+    </body>
+
+    <script src="assets/js/mainlogic.js"></script>
+    <script src="assets/js/validateInput.js"></script>
+</html>

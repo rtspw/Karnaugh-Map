@@ -1,0 +1,68 @@
+
+#kmap {
+    bottom: 25px;
+    right: 100px;
+}
+
+#kmap td {
+    padding: 10px 20px;
+}
+
+#truth-table {
+    left: 0;
+}
+
+#truth-table td {
+    padding: 10px;
+}
+
+#cde {
+    margin-right: 30px;
+}
+
+#truth-table td {
+    padding: 5px;
+    text-align: center;
+    border: 2px solid #648767;
+    border-radius: 5%;
+}
+
+#truth-table .interpadding {
+    border: none;
+}
+
+#kmap #mirror-line {
+    padding: 0;
+    height: 6px;
+    border: none;
+}
+
+@media screen and (max-width:1150px) {
+
+    .column {
+        position: relative;
+        right: 55px;
+    }
+
+    #main-container {
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-content: flex-end;
+        flex-direction: column;
+    
+    }
+
+    #kmap {
+        position: relative;
+        left: 10px;
+        bottom: 15px;
+    }
+
+    #truth-table {
+        position: relative;
+        left: 50px;
+    }
+
+}

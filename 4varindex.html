@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Karnaugh Maps</title>
+        <title>Karnaugh Maps 4 Variables</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="assets/css/style.css" rel="stylesheet">
@@ -17,6 +17,7 @@
                 <div id="options">
                     <a id="three-variable" href="index.html">Three Variables</a>
                     <a id="four-variable" href="4varindex.html">Four Variables</a>
+                    <a id="five-variable" href="5varindex.html">Five Variables</a>
                 </div>
             </div>
         </div>
@@ -184,10 +185,10 @@
             </div>
         </div>
         <div id="formula-container">
-            <input type="text" autocomplete="off" onkeyup="validateInput(this);" id="minterm-input" value="" placeholder="Enter minterms space-separated">
+            <input type="text" autocomplete="off" onkeyup="validateInput(this);" id="minterm-input" value="" placeholder="Enter minterms space-separated (1 4 d3...)">
         </div>
     </body>
 
-    <script src="assets/js/4variable.js"></script>
+    <script src="assets/js/mainlogic.js"></script>
     <script src="assets/js/validateInput.js"></script>
 </html>
